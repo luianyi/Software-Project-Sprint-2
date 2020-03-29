@@ -493,26 +493,24 @@ public class MainActivity extends AppCompatActivity
             //2. Set the current filename to the filename of the given image
             mCurrentPhotoPath = getExternalFilesDir(Environment.DIRECTORY_PICTURES)+"/"+filenameListF.get(currentElement).toString();
 
-
-            //3. Determine the correct orientation for the image------------- IL
+            //3. Display the given image in the correction orientation --------- IL
             ImageView mImageView = (ImageView) findViewById(R.id.ivGallery);
-            //4. Display the given image
             mImageView.setImageBitmap(CorrectPhotoRotation(mCurrentPhotoPath));   // using the function that corrects the orientation IL
-            //5. Set the caption to the caption of the given image
+            //4. Set the caption to the caption of the given image
             TextView textView = (TextView) findViewById(R.id.editTextCaption);
             textView.setText((CharSequence) captionListF.get(currentElement));
-            //6. Set the date to the date of the given image
+            //5. Set the date to the date of the given image
             TextView textViewforDate = findViewById(R.id.DatetextView);
             textViewforDate.setText((CharSequence) dateListF.get(currentElement).toString());
 
-            //7. Find out the number of faces in the photo--------------IL
+            //6. Find out the number of faces in the photo--------------IL
             //int x = faceRecognitionV2(mCurrentPhotoPath);
-            //8. -display the number of face detected if any. ----------------IL
+            //7. -display the number of face detected if any. ----------------IL
             //TextView textViewforFaceNum = findViewById(R.id.FaceNum_TextView);
             //textViewforFaceNum.setText("number of face : " + String.valueOf(x));
 
 
-            //9 . Set the location information to the location information of the given image
+            //8 . Set the location information to the location information of the given image
             float[] f = {0,0};   // the two values are stored here temporaely, long, lat
             boolean result = false;
             try {
